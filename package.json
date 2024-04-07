@@ -7,15 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:generate":"bunx drizzle-kit generate --postgres",
-    "db:migrate":"bunx drizzle-kit migrate",
-    "db:push":"bunx drizzle-kit push:pg",
-    "db:up":"bunx drizzle-kit up:pg"
+    "db:generate": "bunx drizzle-kit generate --postgres",
+    "db:migrate": "bunx drizzle-kit migrate",
+    "db:push": "bunx drizzle-kit push:pg",
+    "db:up": "bunx drizzle-kit up:pg"
   },
   "dependencies": {
     "@biomejs/biome": "^1.6.4",
     "@lucia-auth/adapter-drizzle": "^1.0.7",
     "class-variance-authority": "^0.7.0",
+    "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.7",
     "lucia": "^3.1.1",
     "next": "14.1.4",

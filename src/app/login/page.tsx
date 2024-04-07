@@ -7,10 +7,9 @@ import { Argon2id } from "oslo/password";
 import { z } from "zod";
 
 const loginSchema = z.object({
-  username: z
-    .string({
-      invalid_type_error: "Invalid Email",
-    }),
+  username: z.string({
+    invalid_type_error: "Invalid Email",
+  }),
   password: z
     .string({
       invalid_type_error: "Invalid Password",
@@ -43,7 +42,7 @@ async function login(formData: FormData): Promise<ActionResult> {
   }
 
   const validPassword = await new Argon2id().verify(
-    existingUser.hashed_password!,
+    existingUser.hashed_password,
     validated.data.password,
   );
 

@@ -8,10 +8,10 @@ import { redirect } from "next/navigation";
 import { Argon2id } from "oslo/password";
 import { z } from "zod";
 
-const signupSchema=z.object({
-    username:z.string(),
-    password:z.string(),
-})
+const signupSchema = z.object({
+  username: z.string(),
+  password: z.string(),
+});
 
 interface ActionResult {
   error: unknown;
@@ -20,36 +20,39 @@ interface ActionResult {
 async function signup(formData: FormData): Promise<ActionResult> {
   "use server";
 
-    const validated=signupSchema.safeParse(formData);
+  const validated = signupSchema.safeParse({
+    username: formData.get("username"),
+    password: formData.get("password"),
+  });
 
-    if(!validated.success){
-        return {
-            error:validated.error.flatten().fieldErrors
-        }
-    }
+  if (!validated.success) {
+    return {
+      error: validated.error.flatten().fieldErrors,
+    };
+  }
 
-    const hashedPassword=await new Argon2id().hash(validated.data.password);
+  const hashedPassword = await new Argon2id().hash(validated.data.password);
+  const userId = generateId(15);
 
-    const newUser=await db.insert(userTable).values({
-        id:generateId(10),
-        username:validated.data.username,
-        hashed_password:hashedPassword
-    })
+  await db.insert(userTable).values({
+    id: userId,
+    username: validated.data.username,
+    hashed_password: hashedPassword,
+  });
 
-    const session=await lucia.createSession(newUser.id,{});
-    const sessionCookie=await lucia.createSessionCookie(session.id);
+  const session = await lucia.createSession(userId, {});
+  const sessionCookie = await lucia.createSessionCookie(session.id);
 
-    cookies().set(sessionCookie.name,sessionCookie.name,sessionCookie.attributes);
+  cookies().set(
+    sessionCookie.name,
+    sessionCookie.name,
+    sessionCookie.attributes,
+  );
 
-return redirect("/")
-
+  return redirect("/");
 }
 
-
-
 export default async function Page() {
-
-
   return (
     <main className="w-full h-screen flex items-center justify-center bg-slate-50">
       <div className="m-auto w-4/6 h-4/6 bg-white rounded-md px-5 py-10">

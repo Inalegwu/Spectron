@@ -11,11 +11,13 @@ const migrationClient = postgres(
 );
 
 migrate(drizzle(migrationClient), {
-  migrationsFolder: ".drizzle",
-  migrationsTable:"migrations",
+  migrationsFolder: "drizzle",
+  migrationsTable: "migrations",
 });
 
-const queryClient = postgres("postgres://postgres:admin@127.0.0.1/plat_jobs_dev");
+const queryClient = postgres(
+  "postgres://postgres:admin@127.0.0.1/plat_jobs_dev",
+);
 const db = drizzle(queryClient, {
   schema,
 });

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["200", "400", "700"],
+});
 
 export const metadata: Metadata = {
-  title: "Plateau Jobs",
-  description:
-    "Premium job placement and job matching platform for plateau state",
+  title: "Spectron",
+  description: "The NextJS Starter Template for Disgruntled Developers",
 };
 
 export default function RootLayout({
@@ -17,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={bricolage.className}>{children}</body>
     </html>
   );
 }
