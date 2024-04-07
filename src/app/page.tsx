@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="w-full  bg-black px-10 py-10 text-white">
-      <div className="absolute z-0 bg-purple-700 rounded-full w-32 h-32 blur-3xl" />
+      <div className="fixed z-0 bg-purple-700 rounded-full w-32 h-32 blur-3xl" />
       <section className="w-4/6 mx-auto mt-10 flex flex-col items-center justify-center">
         <h2 className="font-bold text-3xl">Spectron</h2>
         <h4 className="font-bold text-xl text-gray-100">
@@ -11,7 +11,12 @@ export default function Home() {
         </h4>
       </section>
       <div className="w-3/6 mx-auto mt-16 flex flex-col space-y-10 items-start justify-center">
-        <h2>Genetic Makeup</h2>
+        <div className="flex flex-col items-start justify-start">
+          <h2>Genetic Makeup</h2>
+          <p className="text-xs text-gray-500 font-medium">
+            What pieces make up Spectron
+          </p>
+        </div>
         <div className="w-full bg-[hsla(0,10%,10%,0.3)] flex flex-col items-start justify-center space-x-4 border-[0.4px] border-[hsla(0,100%,100%,0.2)] rounded-md p-2">
           Next JS
           <section className="flex items-center content-center text-sm text-gray-300">
@@ -53,6 +58,13 @@ export default function Home() {
               full blown team.
             </p>
           </section>
+        </div>
+      </div>
+      <div className="flex flex-col mt-16 items-center justify-center space-y-2">
+        <h5>Auth Routes</h5>
+        <div className="flex items-center justify-center space-x-5">
+          <Link href="/signup">Sign Up</Link>
+          <Link href="/login">Login In</Link>
         </div>
       </div>
     </main>
