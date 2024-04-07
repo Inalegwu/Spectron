@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Spectron
+### The NextJS Starter kit for Disgruntled Developers.
 
-## Getting Started
+Spectron brings together the best tools for full-stack web development into one place to allow projects to move faster and forget about writing boilerplate code.
 
-First, run the development server:
+## What makes up Spectron
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[NextJS](https://nextjs.org) : The most popular and probably most controversial react framework , designed to help developers ship larger apps faster than ever before
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[Lucia-Auth](http://lucia-auth.com) : Simple auth solutions for developers who are either tired of being sold kinde-auth or clerk-auth and want to roll their own , or developers who have constraints that don't allow for third party auth services
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[Drizzle ORM](https://orm.drizzle.team) : The typescript orm from the future (imo).An ORM that allows all your code to exist in typescript and doesn't require a generation step , go from schema to query instantly.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Why Spectron ?
+Well I've spawned a lot of projects in my time as a developer and over time , writing the same boilerplate code over and over again takes the fun out of projects , so I create starter projects of my favourite tools to work with that already have the boiler plate in place meaning I don't have to write them and can instead dive right into the project itself.
 
-To learn more about Next.js, take a look at the following resources:
+#### Spectron is built and used by Verve Studio for all projects
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+##### Verve is a design and development studio based in Abuja,Nigeria focused on delivering outstanding expertise to catapult our clients into the future and ensuring they stay there. visit us @[Verve Development Studio](https://verved.studio)
