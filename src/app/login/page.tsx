@@ -1,7 +1,9 @@
 import { lucia } from "@/auth";
 import Button from "@/components/button";
+import Input from "@/components/input";
 import db from "@/db";
 import { cookies } from "next/headers";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Argon2id } from "oslo/password";
 import { z } from "zod";
@@ -69,26 +71,30 @@ interface ActionResult {
 
 export default async function Page() {
   return (
-    <main className="w-full h-screen bg-slate-100 flex items-center justify-center">
+    <main className="w-full h-screen bg-black flex items-center justify-center">
       <form
         action={login}
-        className="w-4/6 h-4/6 px-5 py-10 bg-white rounded-md flex flex-col items-start justify-center space-y-4"
+        className="w-4/6 text-white px-5 py-10 bg-gray-600/10 rounded-md flex flex-col justify-center space-y-4"
       >
         <h1>Sign in</h1>
 
         <label htmlFor="username">Username</label>
-        <input
+        <Input
           className="bg-slate-100 rounded-md p-2"
           name="username"
           id="username"
+          placeholder="Username"
+          intent="form"
         />
         <br />
         <label htmlFor="password">Password</label>
-        <input
+        <Input
           className="bg-slate-100 rounded-md p-2"
           type="password"
           name="password"
           id="password"
+          placeholder="Password"
+          intent="form"
         />
         <br />
         <Button
@@ -98,6 +104,14 @@ export default async function Page() {
         >
           Continue
         </Button>
+        <div className="w-full flex items-center justify-start mt-4">
+          <p className="text-sm">
+            Don't have and account ?{" "}
+            <Link href="/signup" className="text-purple-400">
+              Sign up
+            </Link>
+          </p>
+        </div>
       </form>
     </main>
   );

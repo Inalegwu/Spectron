@@ -1,4 +1,6 @@
 import { lucia } from "@/auth";
+import Button from "@/components/button";
+import Input from "@/components/input";
 import db from "@/db";
 import { userTable } from "@/db/schemas";
 import { generateId } from "lucia";
@@ -54,40 +56,48 @@ async function signup(formData: FormData): Promise<ActionResult> {
 
 export default async function Page() {
   return (
-    <main className="w-full h-screen flex items-center justify-center bg-slate-50">
-      <div className="m-auto w-4/6 h-4/6 bg-white rounded-md px-5 py-10">
-        <form action={signup} className="flex flex-col space-y-2">
-          <label htmlFor="username">Username</label>
-          <input
-            className="bg-slate-100 rounded-md border-1 p-3 border-gray-100"
-            name="username"
-            id="username"
-            required
-          />
-          <br />
-          <label htmlFor="password">Password</label>
-          <input
-            className="bg-slate-100 rounded-md border-1 p-3 border-gray-100"
-            type="password"
-            name="password"
-            id="password"
-            required
-          />
-          <br />
-          <button
-            type="submit"
-            className="p-2 rounded-md text-purple-700 bg-purple-500 items-center justify-center"
-          >
-            Continue
-          </button>
-          <Link
-            className="text-sm mt-4 text-purple-400 w-full items-center justify-center text-center"
-            href="/login"
-          >
-            Login
-          </Link>
-        </form>
-      </div>
+    <main className="w-full h-screen flex items-center justify-center bg-black">
+      <form
+        action={signup}
+        className="flex flex-col space-y-2m-auto w-4/6 bg-gray-600/10 text-white rounded-md px-5 py-10"
+      >
+        <label htmlFor="username">Username</label>
+        <Input
+          className="bg-slate-100 rounded-md border-1 p-3 border-gray-100"
+          name="username"
+          intent="form"
+          id="username"
+          placeholder="Username"
+          required
+        />
+        <br />
+        <label htmlFor="password">Password</label>
+        <Input
+          className="bg-slate-100 rounded-md border-1 p-3 border-gray-100"
+          type="password"
+          name="password"
+          intent="form"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        <br />
+        <Button
+          type="submit"
+          intent="primary"
+          className="p-2 rounded-md text-purple-700 bg-purple-500 items-center justify-center"
+        >
+          Continue
+        </Button>
+        <div className="w-full flex items-center justify-start">
+          <p className="text-sm mt-4">
+            Already have an account ?{" "}
+            <Link className=" text-purple-400" href="/login">
+              Login
+            </Link>
+          </p>
+        </div>
+      </form>
     </main>
   );
 }
