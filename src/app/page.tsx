@@ -1,14 +1,47 @@
+"use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [hover, setHover] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (hover) {
+        setHover(false);
+      }
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [hover]);
+
   return (
     <main className="w-full  bg-black px-10 py-10 text-white">
       <div className="fixed z-0 bg-purple-700 rounded-full w-32 h-32 blur-3xl" />
       <section className="w-4/6 mx-auto mt-10 flex flex-col items-center justify-center">
         <h2 className="font-bold text-3xl">Spectron</h2>
         <h4 className="font-bold text-xl text-gray-100">
-          The NextJS Starter Kit for Disgruntled Developers
+          The NextJS Starter Kit for{" "}
+          <span
+            onMouseOver={() => setHover(true)}
+            onFocus={() => setHover(true)}
+            onMouseLeave={() => setHover(true)}
+            className="text-purple-400 cursor-pointer"
+          >
+            Disgruntled Developers
+          </span>
         </h4>
+        {hover && (
+          <span className="absolute z-10 bg-gray-400/10 w-36 rounded-md p-2 right-40 top-20 text-white text-xs animate-pulse">
+            <p className="text-purple-400 italic font-medium">
+              Disgruntled Developer
+            </p>{" "}
+            (n) : Developer who is tired of frameworks and packages turning up
+            everywhere and just wants to build cool shit
+          </span>
+        )}
       </section>
       <div className="w-3/6 mx-auto mt-16 flex flex-col space-y-10 items-start justify-center">
         <div className="flex flex-col items-start justify-start">

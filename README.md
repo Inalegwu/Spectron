@@ -11,6 +11,8 @@ Spectron brings together the best tools for full-stack web development into one 
 
 [Drizzle ORM](https://orm.drizzle.team) : The typescript orm from the future (imo).An ORM that allows all your code to exist in typescript and doesn't require a generation step , go from schema to query instantly.
 
+[Class Variance Authority](https://cva.style) : Make building your design system for your project easier if you don't want to use all of ShadCN/UI or other projects but want to build a more bespoke system.
+
 
 ## Why Spectron ?
 Well I've spawned a lot of projects in my time as a developer and over time , writing the same boilerplate code over and over again takes the fun out of projects , so I create starter projects of my favourite tools to work with that already have the boiler plate in place meaning I don't have to write them and can instead dive right into the project itself.
