@@ -3,6 +3,8 @@
 
 Spectron brings together the best tools for full-stack web development into one place to allow projects to move faster and forget about writing boilerplate code.
 
+![Screenshot]("/public/screenshots/Screenshot%202024-04-08%20105417.png")
+
 ## What makes up Spectron
 
 [NextJS](https://nextjs.org) : The most popular and probably most controversial react framework , designed to help developers ship larger apps faster than ever before
