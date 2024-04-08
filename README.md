@@ -3,7 +3,7 @@
 
 Spectron brings together the best tools for full-stack web development into one place to allow projects to move faster and forget about writing boilerplate code.
 
-![Screenshot]("/public/screenshots/Screenshot%202024-04-08%20105417.png")
+![Screenshot]("https://github.com/Inalegwu/Spectron/blob/master/public/screenshots/Screenshot%202024-04-08%20105417.png")
 
 ## What makes up Spectron
 
