@@ -1,39 +1,36 @@
 {
-  "name": "Spectron",
+  "name": "spectron",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:generate": "bunx drizzle-kit generate --postgres",
-    "db:migrate": "bunx drizzle-kit migrate",
-    "db:push": "bunx drizzle-kit push:pg",
-    "db:up": "bunx drizzle-kit up:pg"
+    "db:migrate": "bunx prisma migrate dev",
+    "db:studio": "bunx prisma studio"
   },
   "dependencies": {
-    "@biomejs/biome": "^1.6.4",
-    "@lucia-auth/adapter-drizzle": "^1.0.7",
-    "class-variance-authority": "^0.7.0",
-    "dotenv": "^16.4.5",
-    "drizzle-orm": "^0.30.7",
-    "lucia": "^3.1.1",
-    "next": "14.1.4",
-    "oslo": "^1.2.0",
-    "postgres": "^3.4.4",
-    "react": "^18",
-    "react-dom": "^18",
-    "zod": "^3.22.4"
+    "@biomejs/biome": "^1.9.4",
+    "@prisma/client": "^6.0.1",
+    "@radix-ui/themes": "^3.1.6",
+    "better-auth": "^1.0.14",
+    "envalid": "^8.0.0",
+    "lucide-react": "^0.468.0",
+    "next": "^15.0.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "drizzle-kit": "^0.20.14",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
-  }
+    "@types/node": "^20.17.9",
+    "@types/react": "^18.3.14",
+    "@types/react-dom": "^18.3.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "prisma": "^6.0.1",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2"
+  },
+  "trustedDependencies": ["@biomejs/biome", "@prisma/client", "@prisma/engines", "es5-ext", "esbuild", "prisma", "sharp"]
 }

@@ -1,0 +1,60 @@
+generator client{
+    provider="prisma-client-js"
+}
+
+datasource db{
+    provider="postgresql"
+    url=env("DATABASE_URL")
+    directUrl= env("DIRECT_URL")
+}
+
+model User {
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  emailVerified Boolean  @default(false)
+  image         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  sessions Session[]
+  account Account?
+}
+
+model Session {
+  id         String   @id @default(uuid())
+  userId     String
+  expiresAt  DateTime
+  ipAddress  String
+  userAgent  String
+
+  user       User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model Account {
+  id           String   @id @default(uuid())
+  userId       String @unique
+  accountId    String
+  providerId   String
+  accessToken  String?
+  refreshToken String?
+  expiresAt    DateTime?
+  password     String?
+
+  user         User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([providerId, accountId], name: "providerAccountIndex")
+}
+
+model Verification {
+  id         String   @id @default(uuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+
+  @@index([identifier])
+}
+

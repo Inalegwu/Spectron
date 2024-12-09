@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.radix-themes{
+  --default-font-family:var(--font);
+  --heading-font-family: var(--font);
+  --code-font-family:var(--font);
+  --strong-font-family:var(--font);
+  --em-font-family:var(--font);
+  --quote-font-family:var(--font);
+}
