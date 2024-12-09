@@ -30,10 +30,10 @@ export default function Home() {
           <Link
             href="https:/github.com/Inalegwu/Spectron"
             target="_blank"
-            className="w-full bg-neutral-100/20 border-[1px] border-solid border-neutral-100 px-2 py-2 rounded-md flex items-center justify-center text-neutral-400 hover:text-black space-x-2"
+            className="w-full bg-neutral-100 text-neutral-500 border-[1px] border-solid border-neutral-200 px-2 py-2 rounded-md flex items-center justify-center space-x-2"
           >
             <Text>See on Github</Text>
-            <Icon name="Github" size={20} />
+            <Icon name="Github" size={13} />
           </Link>
         </Flex>
       </Flex>
