@@ -3,17 +3,16 @@
 
 Spectron brings together the best tools for full-stack web development into one place to allow projects to move faster and forget about writing boilerplate code.
 
-![Screenshot]("https://github.com/Inalegwu/Spectron/blob/master/public/screenshots/Screenshot%202024-04-08%20105417.png")
 
 ## What makes up Spectron
 
 [NextJS](https://nextjs.org) : The most popular and probably most controversial react framework , designed to help developers ship larger apps faster than ever before
 
-[Lucia-Auth](http://lucia-auth.com) : Simple auth solutions for developers who are either tired of being sold kinde-auth or clerk-auth and want to roll their own , or developers who have constraints that don't allow for third party auth services
+[Better-Auth](http://better-auth.com) : Simple and Effective Auth Solution. The spiritual successor to Lucia Auth. Providing you with the toolkit to contain your own auth but making it easier
 
 [Drizzle ORM](https://orm.drizzle.team) : The typescript orm from the future (imo).An ORM that allows all your code to exist in typescript and doesn't require a generation step , go from schema to query instantly.
 
-[Class Variance Authority](https://cva.style) : Make building your design system for your project easier if you don't want to use all of ShadCN/UI or other projects but want to build a more bespoke system.
+[Radix UI](https://radix-ui.com) : Build with consistent components every single time. Build your own theme system from day 1
 
 
 ## Why Spectron ?
@@ -22,4 +21,4 @@ Well I've spawned a lot of projects in my time as a developer and over time , wr
 #### Spectron is built and used by Verve Studio for all projects
 
 
-##### Verve is a design and development studio based in Abuja,Nigeria focused on delivering outstanding expertise to catapult our clients into the future and ensuring they stay there. visit us @[Verve Development Studio](https://verved.studio)
+##### Verve is a design and development studio based in Abuja, Nigeria focused on delivering outstanding expertise to catapult our clients into the future and ensuring they stay there. visit us @[Verve Development Studio](https://verve.studio)
